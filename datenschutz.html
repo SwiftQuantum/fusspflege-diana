@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung | Fach-Fußpflege Diana</title>
+    <meta name="robots" content="noindex, follow">
+    <style>
+        :root {
+            --petrol-dark: #1b4d54;
+            --teal-primary: #337a82;
+            --teal-light: #52a3ab;
+            --teal-soft: #eaf4f5;
+            --bg-canvas: #f4f8f9;
+            --text-dark: #1a2a2c;
+            --text-muted: #5a6e71;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.9);
+            --shadow-sm: 0 4px 20px rgba(27, 77, 84, 0.06);
+            --shadow-lg: 0 15px 35px rgba(27, 77, 84, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-canvas);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        #liquid-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(82, 163, 171, 0.15);
+            padding: 0.8rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-box img {
+            height: 48px;
+            width: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--teal-primary);
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--petrol-dark);
+        }
+
+        .btn-back {
+            background: linear-gradient(135deg, var(--teal-primary), var(--petrol-dark));
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--petrol-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--teal-primary);
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        p, ul {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        a {
+            color: var(--teal-primary);
+            text-decoration: none;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="liquid-canvas"></canvas>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-box">
+                <img src="logo_fusspflege-diana.jpg" alt="Fach-Fußpflege Diana Logo">
+                <span class="logo-text">Fach-Fußpflege Diana</span>
+            </a>
+            <a href="index.html" class="btn-back">← Zurück zur Startseite</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1>Datenschutzerklärung</h1>
+
+            <h2>1. Datenschutz auf einen Blick</h2>
+            <p>
+                <strong>Allgemeine Hinweise:</strong> Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+            </p>
+
+            <h2>2. Datenerfassung auf dieser Website</h2>
+            <p><strong>Verantwortliche Stelle:</strong></p>
+            <p>
+                Diana Lytvyn<br>
+                Fach-Fußpflege Diana<br>
+                Lerchenstraße 30, 74564 Crailsheim<br>
+                E-Mail: <a href="mailto:info@fusspflege-diana.de">info@fusspflege-diana.de</a>
+            </p>
+
+            <p><strong>Wie erfassen wir Ihre Daten?</strong></p>
+            <p>
+                Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z. B. per E-Mail oder Telefon bei einer Terminbuchung). Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).
+            </p>
+
+            <p><strong>Wofür nutzen wir Ihre Daten?</strong></p>
+            <p>
+                Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten.
+            </p>
+
+            <h2>3. Rechte der betroffenen Personen</h2>
+            <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen (DSGVO) jederzeit das Recht auf:</p>
+            <ul>
+                <li><strong>Auskunft</strong> über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO).</li>
+                <li><strong>Berichtigung</strong> unrichtiger oder unvollständiger Daten (Art. 16 DSGVO).</li>
+                <li><strong>Löschung</strong> Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO).</li>
+                <li><strong>Einschränkung</strong> der Datenverarbeitung (Art. 18 DSGVO).</li>
+                <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO).</li>
+                <li><strong>Widerruf</strong> einer bereits erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO).</li>
+            </ul>
+
+            <h2>4. Webhosting & Server-Log-Dateien</h2>
+            <p>
+                Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+            </p>
+            <ul>
+                <li>Browsertyp und Browserversion</li>
+                <li>Verwendetes Betriebssystem</li>
+                <li>Referrer URL</li>
+                <li>Hostname des zugreifenden Rechners</li>
+                <li>Uhrzeit der Serveranfrage</li>
+                <li>IP-Adresse</li>
+            </ul>
+            <p>
+                Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.
+            </p>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Fach-Fußpflege Diana. Powered by <a href="https://swiftquantum.dev" target="_blank">Swift#powered by SwiftQuantum</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('liquid-canvas');
+        const ctx = canvas.getContext('2d');
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize);
+        resize();
+        let time = 0;
+        function animate() {
+            time += 0.005;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const w = canvas.width, h = canvas.height;
+            const grad1 = ctx.createRadialGradient(w * 0.2 + Math.sin(time) * 100, h * 0.3, 50, w * 0.2, h * 0.3, w * 0.6);
+            grad1.addColorStop(0, 'rgba(82, 163, 171, 0.12)'); grad1.addColorStop(1, 'rgba(244, 248, 249, 0)');
+            ctx.fillStyle = grad1; ctx.fillRect(0, 0, w, h);
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
