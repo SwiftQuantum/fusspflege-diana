@@ -7,22 +7,22 @@
     <meta name="description" content="Professionelle Fach-Fußpflege, Fußmassage und Augenbrauenpflege bei Diana Lytvyn in Crailsheim. Gesunde & gepflegte Füße für Damen und Herren.">
     <meta name="keywords" content="Fußpflege Crailsheim, Fach-Fußpflege Diana, Diana Lytvyn, Nägel lackieren, Fußmassage Crailsheim, Augenbrauen zupfen, Augenbrauen färben">
     
-    <!-- Open Graph Meta Tags für Social Media & Messenger -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Fach-Fußpflege bei Diana | Crailsheim">
     <meta property="og:description" content="Ihre Expertin für professionelle Fach-Fußpflege, wohltuende Massage und kosmetische Behandlung in Crailsheim.">
     <meta property="og:image" content="logo_fusspflege-diana.jpg">
     <meta property="og:url" content="https://fusspflege-diana.de">
     <meta property="og:type" content="website">
 
-    <!-- Schema.org JSON-LD für Google & KI-Suche (Rich Snippets) -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BeautySalon",
-      "name": "Fach-Fußpflege Diana",
+      "name": "Fach-Fußpflege bei Diana",
       "image": "logo_fusspflege-diana.jpg",
       "telephone": "+491627094909",
-      "email": "info@fusspflege-diana.de",
+      "email": "diana.lytvyn778@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Lerchenstraße 30",
@@ -37,46 +37,31 @@
         "itemListElement": [
           {
             "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Fusspflege komplett mit Lackieren"
-            },
+            "itemOffered": { "@type": "Service", "name": "Fusspflege komplett mit Lackieren" },
             "price": "45.00",
             "priceCurrency": "EUR"
           },
           {
             "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Nägel lackieren plus Pflege"
-            },
+            "itemOffered": { "@type": "Service", "name": "Nägel lackieren plus Pflege" },
             "price": "30.00",
             "priceCurrency": "EUR"
           },
           {
             "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Fussmassage 30 Min"
-            },
+            "itemOffered": { "@type": "Service", "name": "Fussmassage 30 Min" },
             "price": "25.00",
             "priceCurrency": "EUR"
           },
           {
             "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Augenbrauen zupfen"
-            },
+            "itemOffered": { "@type": "Service", "name": "Augenbrauen zupfen" },
             "price": "10.00",
             "priceCurrency": "EUR"
           },
           {
             "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Augenbrauen färben"
-            },
+            "itemOffered": { "@type": "Service", "name": "Augenbrauen färben" },
             "price": "10.00",
             "priceCurrency": "EUR"
           }
@@ -101,7 +86,8 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-canvas);
@@ -110,7 +96,7 @@
             overflow-x: hidden;
         }
 
-        /* Fluid Water Background Canvas */
+        /* Liquid Canvas Background */
         #liquid-canvas {
             position: fixed;
             top: 0;
@@ -121,7 +107,7 @@
             pointer-events: none;
         }
 
-        /* Header & Navigation */
+        /* Responsive Header & Nav */
         header {
             position: fixed;
             top: 0;
@@ -130,7 +116,7 @@
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(82, 163, 171, 0.15);
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1.5rem;
             transition: all 0.3s ease;
         }
 
@@ -155,7 +141,10 @@
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid var(--teal-primary);
+            transition: transform 0.4s ease;
         }
+
+        .logo-box:hover img { transform: rotate(10deg) scale(1.05); }
 
         .logo-text {
             font-size: 1.25rem;
@@ -164,21 +153,21 @@
             letter-spacing: -0.3px;
         }
 
-        nav ul {
+        .nav-menu {
             display: flex;
             list-style: none;
             gap: 1.8rem;
             align-items: center;
         }
 
-        nav a {
+        .nav-menu a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        nav a:hover { color: var(--teal-primary); }
+        .nav-menu a:hover { color: var(--teal-primary); }
 
         .btn-nav {
             background: linear-gradient(135deg, var(--teal-primary), var(--petrol-dark));
@@ -186,15 +175,40 @@
             padding: 0.6rem 1.4rem;
             border-radius: 50px;
             box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Hamburger Toggle Button */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--petrol-dark);
+            border-radius: 3px;
+            transition: all 0.3s ease;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8rem 2rem 4rem;
+            padding: 8rem 1.5rem 4rem;
             text-align: center;
         }
 
@@ -206,6 +220,7 @@
             padding: 3.5rem 2.5rem;
             max-width: 800px;
             box-shadow: var(--shadow-lg);
+            animation: fadeIn 1s ease-out;
         }
 
         .hero-badge {
@@ -222,7 +237,7 @@
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 5vw, 3.2rem);
             color: var(--petrol-dark);
             margin-bottom: 1rem;
             line-height: 1.2;
@@ -230,16 +245,9 @@
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             color: var(--text-muted);
             margin-bottom: 2rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         .btn-primary {
@@ -249,31 +257,43 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
+            display: inline-block;
             transition: all 0.3s ease;
             box-shadow: var(--shadow-sm);
         }
 
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
 
-        /* Container & Titles */
+        /* Section Container & Scroll Reveal Animation */
         .section-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 5rem 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section-container.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.25rem;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
             color: var(--petrol-dark);
             margin-bottom: 3rem;
             font-weight: 700;
         }
 
-        /* Services & Pricing Grid */
+        /* Interactive Service Cards */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -283,15 +303,28 @@
             padding: 2rem;
             box-shadow: var(--shadow-sm);
             border: 1px solid rgba(82, 163, 171, 0.15);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: linear-gradient(to bottom, var(--teal-primary), var(--teal-light));
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
             border-color: var(--teal-light);
         }
+
+        .service-card:hover::before { opacity: 1; }
 
         .service-header {
             display: flex;
@@ -302,13 +335,13 @@
         }
 
         .service-name {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--petrol-dark);
         }
 
         .service-price {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--teal-primary);
             background: var(--teal-soft);
@@ -322,7 +355,7 @@
             font-size: 0.95rem;
         }
 
-        /* About Section */
+        /* About Section Card */
         .about-card {
             background: var(--glass);
             backdrop-filter: blur(12px);
@@ -341,7 +374,11 @@
             border-radius: 20px;
             object-fit: cover;
             border: 3px solid var(--teal-soft);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.4s ease;
         }
+
+        .about-card:hover .about-img { transform: scale(1.03); }
 
         /* Contact Section */
         .contact-box {
@@ -354,7 +391,7 @@
         }
 
         .contact-box h2 {
-            font-size: 2.25rem;
+            font-size: clamp(1.8rem, 4vw, 2.25rem);
             margin-bottom: 1rem;
             font-weight: 700;
         }
@@ -362,7 +399,7 @@
         .contact-details {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
             margin-top: 2rem;
         }
@@ -371,8 +408,15 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.4rem;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
         }
+
+        .contact-item:hover { transform: translateY(-3px); }
 
         .contact-item a {
             color: var(--white);
@@ -380,13 +424,11 @@
             font-weight: 500;
         }
 
-        .contact-item a:hover { text-decoration: underline; }
-
         /* Footer */
         footer {
             background: var(--petrol-dark);
             color: rgba(255, 255, 255, 0.7);
-            padding: 2.5rem 2rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
             font-size: 0.9rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -418,11 +460,46 @@
             font-weight: 600;
         }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.1rem; }
-            .about-card { grid-template-columns: 1fr; text-align: center; }
-            .about-img { margin: 0 auto; }
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Breakpoints */
+        @media (max-width: 850px) {
+            .mobile-toggle { display: flex; }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px; right: -100%;
+                width: 80%; max-width: 300px;
+                height: calc(100vh - 70px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 3rem 2rem;
+                box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+                transition: right 0.4s ease;
+            }
+
+            .nav-menu.active { right: 0; }
+
+            .about-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            .about-img {
+                margin: 0 auto;
+                max-width: 200px;
+                height: 200px;
+            }
+
             .contact-details { flex-direction: column; gap: 1rem; }
+            .contact-item { justify-content: center; }
         }
     </style>
 </head>
@@ -433,17 +510,20 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo-box">
-                <img src="logo_fusspflege-diana.jpg" alt="Fach-Fußpflege Diana Logo. Ihre Fußpflege Behandlung nach höchsten Anspruch in Crailsheim">
+                <img src="logo_fusspflege-diana.jpg" alt="Fach-Fußpflege Diana Logo">
                 <span class="logo-text">Fach-Fußpflege Diana</span>
             </a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Start</a></li>
-                    <li><a href="#leistungen">Leistungen & Preise</a></li>
-                    <li><a href="#ueber-mich">Über mich</a></li>
-                    <li><a href="#kontakt" class="btn-nav">Termin buchen</a></li>
-                </ul>
-            </nav>
+            
+            <button class="mobile-toggle" id="menu-toggle" aria-label="Menü öffnen">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Start</a></li>
+                <li><a href="#leistungen" class="nav-link">Leistungen & Preise</a></li>
+                <li><a href="#ueber-mich" class="nav-link">Über mich</a></li>
+                <li><a href="#kontakt" class="btn-nav nav-link">Termin buchen</a></li>
+            </ul>
         </div>
     </header>
 
@@ -452,7 +532,7 @@
             <span class="hero-badge">Für Damen und Herren</span>
             <h1>Gesunde & gepflegte Füße bei Diana</h1>
             <p>Ihre Expertin für professionelle Fach-Fußpflege, wohltuende Massage und kosmetische Behandlung in Crailsheim.</p>
-            <div class="hero-buttons">
+            <div>
                 <a href="#leistungen" class="btn-primary">Leistungen & Preise entdecken</a>
             </div>
         </div>
@@ -528,7 +608,7 @@
                     <span>📞 <a href="tel:01627094909">0162 7094909</a></span>
                 </div>
                 <div class="contact-item">
-                    <span>✉️ <a href="mailto:info@fusspflege-diana.de">info@fusspflege-diana.de</a></span>
+                    <span>✉️ <a href="mailto:diana.lytvyn778@gmail.com">diana.lytvyn778@gmail.com</a></span>
                 </div>
             </div>
         </div>
@@ -544,9 +624,40 @@
     </footer>
 
     <script>
-        // Smooth Canvas Fluid Effect Animation
+        // 1. Mobile Menu Toggle
+        const toggleBtn = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        toggleBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => navMenu.classList.remove('active'));
+        });
+
+        // 2. Scroll Reveal Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.section-container').forEach(sec => observer.observe(sec));
+
+        // 3. Interactive Liquid & Wave Canvas Animation
         const canvas = document.getElementById('liquid-canvas');
         const ctx = canvas.getContext('2d');
+
+        let mouse = { x: null, y: null, radius: 150 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -563,32 +674,40 @@
             const w = canvas.width;
             const h = canvas.height;
 
+            // Ambient Water Gradient Blobs
             const grad1 = ctx.createRadialGradient(
-                w * 0.2 + Math.sin(time) * 100, 
-                h * 0.3 + Math.cos(time * 0.8) * 80, 
-                50, 
-                w * 0.2, 
-                h * 0.3, 
-                w * 0.6
+                w * 0.2 + Math.sin(time) * 80, 
+                h * 0.3 + Math.cos(time * 0.8) * 60, 
+                30, 
+                w * 0.2, h * 0.3, w * 0.5
             );
-            grad1.addColorStop(0, 'rgba(82, 163, 171, 0.12)');
+            grad1.addColorStop(0, 'rgba(82, 163, 171, 0.14)');
             grad1.addColorStop(1, 'rgba(244, 248, 249, 0)');
 
             const grad2 = ctx.createRadialGradient(
-                w * 0.8 + Math.cos(time * 0.7) * 90, 
-                h * 0.7 + Math.sin(time * 0.9) * 90, 
-                80, 
-                w * 0.8, 
-                h * 0.7, 
-                w * 0.7
+                w * 0.8 + Math.cos(time * 0.7) * 70, 
+                h * 0.7 + Math.sin(time * 0.9) * 70, 
+                50, 
+                w * 0.8, h * 0.7, w * 0.6
             );
-            grad2.addColorStop(0, 'rgba(27, 77, 84, 0.08)');
+            grad2.addColorStop(0, 'rgba(27, 77, 84, 0.09)');
             grad2.addColorStop(1, 'rgba(244, 248, 249, 0)');
 
             ctx.fillStyle = grad1;
             ctx.fillRect(0, 0, w, h);
             ctx.fillStyle = grad2;
             ctx.fillRect(0, 0, w, h);
+
+            // Subtle Mouse Interactive Water Ripple Effect
+            if (mouse.x && mouse.y) {
+                const mouseGrad = ctx.createRadialGradient(mouse.x, mouse.y, 10, mouse.x, mouse.y, 120);
+                mouseGrad.addColorStop(0, 'rgba(82, 163, 171, 0.1)');
+                mouseGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                ctx.fillStyle = mouseGrad;
+                ctx.beginPath();
+                ctx.arc(mouse.x, mouse.y, 120, 0, Math.PI * 2);
+                ctx.fill();
+            }
 
             requestAnimationFrame(animate);
         }
