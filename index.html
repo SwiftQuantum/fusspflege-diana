@@ -14,6 +14,9 @@
     <meta property="og:url" content="https://fusspflege-diana.de">
     <meta property="og:type" content="website">
 
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
@@ -80,6 +83,7 @@
             --text-dark: #1a2a2c;
             --text-muted: #5a6e71;
             --white: #ffffff;
+            --whatsapp-green: #25D366;
             --glass: rgba(255, 255, 255, 0.85);
             --shadow-sm: 0 4px 20px rgba(27, 77, 84, 0.06);
             --shadow-lg: 0 15px 35px rgba(27, 77, 84, 0.12);
@@ -107,7 +111,7 @@
             pointer-events: none;
         }
 
-        /* Responsive Header & Nav */
+        /* Header & Nav */
         header {
             position: fixed;
             top: 0;
@@ -267,7 +271,7 @@
             box-shadow: var(--shadow-lg);
         }
 
-        /* Section Container & Scroll Reveal Animation */
+        /* Section Container */
         .section-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -290,7 +294,7 @@
             font-weight: 700;
         }
 
-        /* Interactive Service Cards */
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -355,7 +359,7 @@
             font-size: 0.95rem;
         }
 
-        /* About Section Card */
+        /* About Section */
         .about-card {
             background: var(--glass);
             backdrop-filter: blur(12px);
@@ -399,7 +403,7 @@
         .contact-details {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
             margin-top: 2rem;
         }
@@ -409,19 +413,65 @@
             align-items: center;
             gap: 0.8rem;
             font-size: 1.05rem;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
             padding: 0.8rem 1.4rem;
             border-radius: 50px;
             backdrop-filter: blur(5px);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .contact-item:hover { transform: translateY(-3px); }
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+        }
 
         .contact-item a {
             color: var(--white);
             text-decoration: none;
             font-weight: 500;
+        }
+
+        .btn-whatsapp-inline {
+            background: var(--whatsapp-green);
+            color: var(--white) !important;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-whatsapp-inline:hover { transform: scale(1.05); }
+
+        /* Floating WhatsApp Button unten rechts */
+        .whatsapp-float {
+            position: fixed;
+            width: 58px;
+            height: 58px;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-green);
+            color: var(--white);
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            color: var(--white);
         }
 
         /* Footer */
@@ -460,13 +510,12 @@
             font-weight: 600;
         }
 
-        /* Keyframe Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobile Breakpoints */
+        /* Responsive Breakpoints */
         @media (max-width: 850px) {
             .mobile-toggle { display: flex; }
 
@@ -499,13 +548,26 @@
             }
 
             .contact-details { flex-direction: column; gap: 1rem; }
-            .contact-item { justify-content: center; }
+            .contact-item { justify-content: center; flex-wrap: wrap; }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
     <canvas id="liquid-canvas"></canvas>
+
+    <!-- Mitlaufender WhatsApp-Button unten rechts -->
+    <a href="https://wa.me/491627094909?text=Hallo%20Diana,%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp Nachricht senden">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <header>
         <div class="nav-container">
@@ -602,13 +664,19 @@
             <p>Ich freue mich auf Ihren Besuch in Crailsheim!</p>
             <div class="contact-details">
                 <div class="contact-item">
-                    <span>📍 Lerchenstraße 30, 74564 Crailsheim</span>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Lerchenstraße 30, 74564 Crailsheim</span>
                 </div>
                 <div class="contact-item">
-                    <span>📞 <a href="tel:01627094909">0162 7094909</a></span>
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:01627094909">0162 7094909</a>
+                    <a href="https://wa.me/491627094909?text=Hallo%20Diana,%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20vereinbaren." class="btn-whatsapp-inline" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
                 </div>
                 <div class="contact-item">
-                    <span>✉️ <a href="mailto:diana.lytvyn778@gmail.com">diana.lytvyn778@gmail.com</a></span>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:diana.lytvyn778@gmail.com">diana.lytvyn778@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -648,11 +716,11 @@
 
         document.querySelectorAll('.section-container').forEach(sec => observer.observe(sec));
 
-        // 3. Interactive Liquid & Wave Canvas Animation
+        // 3. Interactive Liquid Canvas
         const canvas = document.getElementById('liquid-canvas');
         const ctx = canvas.getContext('2d');
 
-        let mouse = { x: null, y: null, radius: 150 };
+        let mouse = { x: null, y: null };
 
         window.addEventListener('mousemove', (e) => {
             mouse.x = e.x;
@@ -674,7 +742,6 @@
             const w = canvas.width;
             const h = canvas.height;
 
-            // Ambient Water Gradient Blobs
             const grad1 = ctx.createRadialGradient(
                 w * 0.2 + Math.sin(time) * 80, 
                 h * 0.3 + Math.cos(time * 0.8) * 60, 
@@ -698,7 +765,6 @@
             ctx.fillStyle = grad2;
             ctx.fillRect(0, 0, w, h);
 
-            // Subtle Mouse Interactive Water Ripple Effect
             if (mouse.x && mouse.y) {
                 const mouseGrad = ctx.createRadialGradient(mouse.x, mouse.y, 10, mouse.x, mouse.y, 120);
                 mouseGrad.addColorStop(0, 'rgba(82, 163, 171, 0.1)');
